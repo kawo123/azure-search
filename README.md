@@ -12,6 +12,14 @@ Azure Search demo highlighting key featyres:  synonyms, search relevancy, auto-c
 
 - Clone the repository
 
+- In `./terraform`:
+  - Change `prefix` in `variables.tf` because Azure Search name has to be globally unique
+    - For the remainder of the documentation, the prefix `azure-km` **WILL BE ASSUMED**
+  - Run `terraform init` to initialize Terraform
+  - Run `terraform plan -out=out.tfplan`
+  - Run `terraform apply out.tfplan`
+  - Note the outputs of `terraform apply`
+
 ## Gotchas
 
 - Azure Search Explorer (Portal) doesn't support Lucene syntax
