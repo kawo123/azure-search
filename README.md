@@ -15,10 +15,26 @@ Azure Search demo highlighting key featyres:  synonyms, search relevancy, auto-c
 - In `./terraform`:
   - Change `prefix` in `variables.tf` because Azure Search name has to be globally unique
     - For the remainder of the documentation, the prefix `azure-km` **WILL BE ASSUMED**
+    - At this time of this project, Terraform doesn't support Azure cognitive service (all-in-one). Hence, user will have to create cognitive service (all-in-one) through Azure Portal with similar naming convention as Terraform-provisioned resources (e.g. `azure-search-cogsrv`)
+      - The cognitive serviec (all-in-one) is called "Cognitive Services" on Azure Marketplace
   - Run `terraform init` to initialize Terraform
   - Run `terraform plan -out=out.tfplan`
   - Run `terraform apply out.tfplan`
   - Note the outputs of `terraform apply`
+
+- Upload `data/caselaw-sample.json` to Azure Blob Storage
+- Import postman request and environment variable
+- Fill in values for environment variables
+- Run postman requests `01 - 05`
+
+## Next Steps
+
+- [] Synonyms
+- [] Search scoring
+- [] auto-complete
+- [] auto-suggestion
+- [] doc: getting started
+- [] doc: explanation
 
 ## Gotchas
 
